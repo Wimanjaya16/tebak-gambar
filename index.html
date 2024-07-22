@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tebak Gambar - Halaman 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+        }
+        img {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: calc(100% - 22px);
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .hidden {
+            display: none;
+        }
+        .love {
+            font-size: 2em;
+            color: red;
+            animation: loveAnimation 1s infinite;
+        }
+        @keyframes loveAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tebak Gambar - Halaman 1</h1>
+        <p>Lihat gambar berikut dan masukkan jawaban di kolom di bawah:</p>
+        <img src="images/kucing.jpg" alt="Gambar Kucing">
+        <br><br>
+        <label for="answer">Jawaban Anda:</label>
+        <input type="text" id="answer" name="answer">
+        <button onclick="checkAnswer()">Kirim Jawaban</button>
+        <p id="message" class="hidden">Selamat! <span class="love">💖💖💖</span></p>
+    </div>
+    <script>
+        const correctAnswer = "kucing"; // Jawaban yang benar
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.toLowerCase();
+            const message = document.getElementById('message');
+            if (userAnswer === correctAnswer) {
+                message.classList.remove('hidden');
+                setTimeout(() => {
+                    window.location.href = 'page2.html'; // Lanjut ke halaman kedua
+                }, 2000);
+            } else {
+                alert('Coba lagi!');
+            }
+        }
+    </script>
+</body>
+</html>
