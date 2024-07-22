@@ -70,7 +70,7 @@
     <div class="container">
         <h1>Tebak Gambar - Halaman 1</h1>
         <p>Lihat gambar berikut dan masukkan jawaban di kolom di bawah:</p>
-        <img src="kucing.jpg" alt="Gambar Kucing">
+        <img src="images/kucing.jpg" alt="Gambar Kucing" data-answer="Kucing duyung">
         <br><br>
         <label for="answer">Jawaban Anda:</label>
         <input type="text" id="answer" name="answer">
@@ -78,9 +78,8 @@
         <p id="message" class="hidden">Selamat! <span class="love">💖💖💖</span></p>
     </div>
     <script>
-        const correctAnswer = "kucing"; // Jawaban yang benar
-
         function checkAnswer() {
+            const correctAnswer = document.querySelector('img').dataset.answer;
             const userAnswer = document.getElementById('answer').value.toLowerCase();
             const message = document.getElementById('message');
             if (userAnswer === correctAnswer) {
