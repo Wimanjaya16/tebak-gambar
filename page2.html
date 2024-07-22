@@ -6,47 +6,54 @@
     <title>Tebak Gambar - Halaman 2</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 20px;
         }
         h1 {
-            color: #333;
+            color: #4a4a4a;
         }
         .container {
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
             text-align: center;
+            margin-top: 50px;
         }
         img {
-            border-radius: 10px;
+            border-radius: 20px;
             max-width: 100%;
             height: auto;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
         }
         input[type="text"] {
-            padding: 10px;
-            width: calc(100% - 22px);
-            margin-top: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 15px;
+            width: calc(100% - 32px);
+            margin-top: 20px;
+            margin-bottom: 30px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
             box-sizing: border-box;
+            font-size: 16px;
         }
         button {
-            padding: 10px 20px;
+            padding: 15px 30px;
             background-color: #28a745;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
+            transition: background-color 0.3s;
         }
         button:hover {
             background-color: #218838;
@@ -65,12 +72,13 @@
             100% { transform: scale(1); }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>Tebak Gambar - Halaman 2</h1>
         <p>Lihat gambar berikut dan masukkan jawaban di kolom di bawah:</p>
-        <img src="anjing.jpg" alt="Gambar Anjing" data-answer="3 dan 4">
+        <img src="images/anjing.jpg" alt="Gambar Anjing" data-answer="3 dan 4">
         <br><br>
         <label for="answer">Jawaban Anda:</label>
         <input type="text" id="answer" name="answer">
