@@ -10,17 +10,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f9f9f9;
+            background-color: #2e004f;
+            color: #fff;
             margin: 0;
             padding: 20px;
         }
         h1 {
-            color: #4a4a4a;
+            color: #dcdcdc;
         }
         .container {
-            background: white;
+            background: #4b007a;
             border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             padding: 30px;
             max-width: 500px;
             text-align: center;
@@ -47,7 +48,7 @@
         }
         button {
             padding: 15px 30px;
-            background-color: #28a745;
+            background-color: #d1a1e3;
             color: white;
             border: none;
             border-radius: 10px;
@@ -56,14 +57,14 @@
             transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #b68ac4;
         }
         .hidden {
             display: none;
         }
         .love {
             font-size: 2em;
-            color: red;
+            color: #ff69b4;
             animation: loveAnimation 1s infinite;
         }
         @keyframes loveAnimation {
@@ -78,7 +79,7 @@
     <div class="container">
         <h1>Tebak Gambar - Halaman 2</h1>
         <p>Lihat gambar berikut dan masukkan jawaban di kolom di bawah:</p>
-        <img src="images/anjing.jpg" alt="Gambar Anjing" data-answer="3 dan 4">
+        <img src="anjing.jpg" alt="Gambar Anjing" data-answer="3 dan 4">
         <br><br>
         <label for="answer">Jawaban Anda:</label>
         <input type="text" id="answer" name="answer">
