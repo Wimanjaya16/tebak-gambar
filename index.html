@@ -6,47 +6,54 @@
     <title>Tebak Gambar - Halaman 1</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 20px;
         }
         h1 {
-            color: #333;
+            color: #4a4a4a;
         }
         .container {
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
             text-align: center;
+            margin-top: 50px;
         }
         img {
-            border-radius: 10px;
+            border-radius: 20px;
             max-width: 100%;
             height: auto;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
         }
         input[type="text"] {
-            padding: 10px;
-            width: calc(100% - 22px);
-            margin-top: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 15px;
+            width: calc(100% - 32px);
+            margin-top: 20px;
+            margin-bottom: 30px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
             box-sizing: border-box;
+            font-size: 16px;
         }
         button {
-            padding: 10px 20px;
+            padding: 15px 30px;
             background-color: #28a745;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
+            transition: background-color 0.3s;
         }
         button:hover {
             background-color: #218838;
@@ -59,12 +66,23 @@
             color: red;
             animation: loveAnimation 1s infinite;
         }
+        .flowers {
+            font-size: 2em;
+            color: pink;
+            animation: flowerAnimation 2s infinite;
+        }
         @keyframes loveAnimation {
             0% { transform: scale(1); }
             50% { transform: scale(1.5); }
             100% { transform: scale(1); }
         }
+        @keyframes flowerAnimation {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -75,7 +93,7 @@
         <label for="answer">Jawaban Anda:</label>
         <input type="text" id="answer" name="answer">
         <button onclick="checkAnswer()">Kirim Jawaban</button>
-        <p id="message" class="hidden">Selamat! <span class="love">💖💖💖</span></p>
+        <p id="message" class="hidden">Selamat! Kamu benar menjawab hehehe kamu sangat pintar! <span class="love">💖💖💖</span> <span class="flowers">🌸🌸🌸</span></p>
     </div>
     <script>
         function checkAnswer() {
@@ -86,7 +104,7 @@
                 message.classList.remove('hidden');
                 setTimeout(() => {
                     window.location.href = 'page2.html'; // Lanjut ke halaman kedua
-                }, 2000);
+                }, 4000); // Tampilkan pesan selama 4 detik
             } else {
                 alert('Coba lagi!');
             }
